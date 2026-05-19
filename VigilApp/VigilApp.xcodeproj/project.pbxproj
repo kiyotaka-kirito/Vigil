@@ -6,17 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6615251E2FBC5FBA008C594E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6615251A2FBC5FBA008C594E /* Assets.xcassets */; };
+		6615251F2FBC5FBA008C594E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615251B2FBC5FBA008C594E /* ContentView.swift */; };
+		661525202FBC5FBA008C594E /* VigilAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615251C2FBC5FBA008C594E /* VigilAppApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		661525002FBC5EF0008C594E /* VigilApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VigilApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6615251A2FBC5FBA008C594E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6615251B2FBC5FBA008C594E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6615251C2FBC5FBA008C594E /* VigilAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigilAppApp.swift; sourceTree = "<group>"; };
+		661525222FBC5FF9008C594E /* VigilCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = VigilCore; path = ../VigilCore; sourceTree = SOURCE_ROOT; };
+		661525232FBC6012008C594E /* VigilData */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = VigilData; path = ../VigilData; sourceTree = SOURCE_ROOT; };
+		661525242FBC6020008C594E /* VigilFeatures */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = VigilFeatures; path = ../VigilFeatures; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		661525022FBC5EF0008C594E /* VigilApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VigilApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		661524FD2FBC5EF0008C594E /* Frameworks */ = {
@@ -32,7 +36,8 @@
 		661524F72FBC5EF0008C594E = {
 			isa = PBXGroup;
 			children = (
-				661525022FBC5EF0008C594E /* VigilApp */,
+				6615251D2FBC5FBA008C594E /* VigilApp */,
+				661525212FBC5FCA008C594E /* Packages */,
 				661525012FBC5EF0008C594E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +48,26 @@
 				661525002FBC5EF0008C594E /* VigilApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6615251D2FBC5FBA008C594E /* VigilApp */ = {
+			isa = PBXGroup;
+			children = (
+				6615251A2FBC5FBA008C594E /* Assets.xcassets */,
+				6615251B2FBC5FBA008C594E /* ContentView.swift */,
+				6615251C2FBC5FBA008C594E /* VigilAppApp.swift */,
+			);
+			path = VigilApp;
+			sourceTree = "<group>";
+		};
+		661525212FBC5FCA008C594E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				661525222FBC5FF9008C594E /* VigilCore */,
+				661525232FBC6012008C594E /* VigilData */,
+				661525242FBC6020008C594E /* VigilFeatures */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +84,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				661525022FBC5EF0008C594E /* VigilApp */,
 			);
 			name = VigilApp;
 			packageProductDependencies = (
@@ -109,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6615251E2FBC5FBA008C594E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6615251F2FBC5FBA008C594E /* ContentView.swift in Sources */,
+				661525202FBC5FBA008C594E /* VigilAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +203,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -236,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -256,11 +281,13 @@
 				DEVELOPMENT_TEAM = 782Y4VGK55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Vigil;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -274,7 +301,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -288,11 +315,13 @@
 				DEVELOPMENT_TEAM = 782Y4VGK55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Vigil;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +335,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
