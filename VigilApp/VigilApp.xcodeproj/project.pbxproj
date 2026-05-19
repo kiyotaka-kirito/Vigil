@@ -10,6 +10,7 @@
 		6615251E2FBC5FBA008C594E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6615251A2FBC5FBA008C594E /* Assets.xcassets */; };
 		6615251F2FBC5FBA008C594E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615251B2FBC5FBA008C594E /* ContentView.swift */; };
 		661525202FBC5FBA008C594E /* VigilAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615251C2FBC5FBA008C594E /* VigilAppApp.swift */; };
+		661525332FBC9F16008C594E /* VigilFeatures in Frameworks */ = {isa = PBXBuildFile; productRef = 661525322FBC9F16008C594E /* VigilFeatures */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661525332FBC9F16008C594E /* VigilFeatures in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +40,7 @@
 			children = (
 				6615251D2FBC5FBA008C594E /* VigilApp */,
 				661525212FBC5FCA008C594E /* Packages */,
+				661525312FBC9F16008C594E /* Frameworks */,
 				661525012FBC5EF0008C594E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +73,13 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		661525312FBC9F16008C594E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +97,7 @@
 			);
 			name = VigilApp;
 			packageProductDependencies = (
+				661525322FBC9F16008C594E /* VigilFeatures */,
 			);
 			productName = VigilApp;
 			productReference = 661525002FBC5EF0008C594E /* VigilApp.app */;
@@ -361,6 +372,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		661525322FBC9F16008C594E /* VigilFeatures */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VigilFeatures;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 661524F82FBC5EF0008C594E /* Project object */;
 }
