@@ -7,7 +7,6 @@
 
 import SwiftUI
 import VigilCore
-import VigilData
 
 public struct DashboardView: View {
     
@@ -54,13 +53,15 @@ public struct DashboardView: View {
                                 .frame(maxWidth: .infinity)
                                 .padding()
                         } else {
-                            ForEach(1..<5) {_ in
-                                TransactionRow(transaction: Transaction(amount: 120, catgory: .shopping))
+                            ForEach(viewModel.recentTransactions) { tx in
+                                TransactionRow(transaction: tx)
+                                    .padding(.horizontal)
                             }
                         }
                     }
                     
                 }
+                .padding(.top)
             }
             .navigationTitle("Budget Tracker")
             .onAppear { viewModel.loadTransactions() }
