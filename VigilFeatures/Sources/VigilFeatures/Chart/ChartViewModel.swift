@@ -40,6 +40,7 @@ public final class ChartViewModel {
     
     public func load() {
         isLoading = true
+        defer { isLoading = false }
         
         do {
             let transactions = try repository.fetchAll()

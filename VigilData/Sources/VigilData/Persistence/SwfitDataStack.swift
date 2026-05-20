@@ -11,7 +11,7 @@ import SwiftData
 @MainActor
 public final class SwfitDataStack {
     
-    private static let shard = SwfitDataStack()
+    public static let shared = SwfitDataStack()
     
     public let container: ModelContainer
     

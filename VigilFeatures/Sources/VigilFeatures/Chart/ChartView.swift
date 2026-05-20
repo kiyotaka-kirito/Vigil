@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 import VigilCore
 
-struct ChartView: View {
+public struct ChartView: View {
     
     @State var viewModel: ChartViewModel
     
@@ -17,43 +17,43 @@ struct ChartView: View {
         self.viewModel = viewModel
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             ScrollView {
-                
-                // Chart Picker
-                Picker("Chart Type", selection: $viewModel.selectedChartType) {
-                    ForEach(ChartType.allCases, id: \.self) { type in
-                        Text(type.rawValue).tag(type)
+                VStack(spacing: 20) {
+                    // Chart Picker
+                    Picker("Chart Type", selection: $viewModel.selectedChartType) {
+                        ForEach(ChartType.allCases, id: \.self) { type in
+                            Text(type.rawValue).tag(type)
+                        }
                     }
-                }
-                .pickerStyle(.segmented)
-                .padding(4)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                
-                // Chart Data
-                if viewModel.isLoading {
-                    ProgressView()
-                        .frame(maxWidth: .infinity)
-                        .padding(40)
-                } else if viewModel.categorySpending.isEmpty {
-                    ContentUnavailableView(
-                        "No Data",
-                        systemImage: "chart.pie",
-                        description: Text("No data yet.\nAdd transactions to see your spending breakdown.")
-                    )
-                } else {
-                    if viewModel.selectedChartType == .pie {
-                        pieChart
+                    .pickerStyle(.segmented)
+                    .padding(4)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    
+                    // Chart Data
+                    if viewModel.isLoading {
+                        ProgressView()
+                            .frame(maxWidth: .infinity)
+                            .padding(40)
+                    } else if viewModel.categorySpending.isEmpty {
+                        ContentUnavailableView(
+                            "No Data",
+                            systemImage: "chart.pie",
+                            description: Text("Add transactions to see your spending breakdown.")
+                        )
                     } else {
-                        barChart
+                        if viewModel.selectedChartType == .pie {
+                            pieChart
+                        } else {
+                            barChart
+                        }
+                        
+                        // Breakdown List
+                        breakdownList
+                        
                     }
-                    
-                    // Breakdown List
-                    breakdownList
-                    
                 }
-                
             }
             .navigationTitle("Spending")
             .onAppear { viewModel.load() }

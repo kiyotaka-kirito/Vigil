@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6615251E2FBC5FBA008C594E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6615251A2FBC5FBA008C594E /* Assets.xcassets */; };
-		6615251F2FBC5FBA008C594E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615251B2FBC5FBA008C594E /* ContentView.swift */; };
+		6615251F2FBC5FBA008C594E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615251B2FBC5FBA008C594E /* RootView.swift */; };
 		661525202FBC5FBA008C594E /* VigilAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615251C2FBC5FBA008C594E /* VigilAppApp.swift */; };
 		661525332FBC9F16008C594E /* VigilFeatures in Frameworks */ = {isa = PBXBuildFile; productRef = 661525322FBC9F16008C594E /* VigilFeatures */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		661525002FBC5EF0008C594E /* VigilApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VigilApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6615251A2FBC5FBA008C594E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6615251B2FBC5FBA008C594E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6615251B2FBC5FBA008C594E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		6615251C2FBC5FBA008C594E /* VigilAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigilAppApp.swift; sourceTree = "<group>"; };
 		661525222FBC5FF9008C594E /* VigilCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = VigilCore; path = ../VigilCore; sourceTree = SOURCE_ROOT; };
 		661525232FBC6012008C594E /* VigilData */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = VigilData; path = ../VigilData; sourceTree = SOURCE_ROOT; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				6615251A2FBC5FBA008C594E /* Assets.xcassets */,
-				6615251B2FBC5FBA008C594E /* ContentView.swift */,
+				6615251B2FBC5FBA008C594E /* RootView.swift */,
 				6615251C2FBC5FBA008C594E /* VigilAppApp.swift */,
 			);
 			path = VigilApp;
@@ -153,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6615251F2FBC5FBA008C594E /* ContentView.swift in Sources */,
+				6615251F2FBC5FBA008C594E /* RootView.swift in Sources */,
 				661525202FBC5FBA008C594E /* VigilAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
