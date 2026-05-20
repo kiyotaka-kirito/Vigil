@@ -12,7 +12,7 @@ public struct Budget: Identifiable {
     public let id: UUID
     public let category: Category
     public let monthlyLimit: Double
-    public let amountSpent: Double
+    public var amountSpent: Double
     
     public init(
         id: UUID = UUID(),
