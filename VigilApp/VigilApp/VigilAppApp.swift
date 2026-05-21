@@ -15,6 +15,9 @@ struct VigilAppApp: App {
     
     let stack = SwfitDataStack.shared
     
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var viewModel = LockViewModel()
+    
     var body: some Scene {
         WindowGroup {
             let context             = stack.container.mainContext
@@ -33,6 +36,13 @@ struct VigilAppApp: App {
                 budgetListVM: budgetListVM,
                 chartVM: chartVM
             )
+        }
+        .onChange(of: scenePhase) { oldValue, newValue in
+            switch scenePhase {
+            case .background: viewModel.appDidBackground()
+            case .active: viewModel.appDidForeground()
+            default: break
+            }
         }
     }
 }

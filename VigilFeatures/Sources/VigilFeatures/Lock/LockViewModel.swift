@@ -94,7 +94,7 @@ public final class LockViewModel {
     
     // PIN entry
     public func submitPIN() {
-        guard PINValidator.isValid(setupPIN) else {
+        guard PINValidator.isValid(pinInput) else {
             errorMessage = "Please enter a 4-digit PIN."
             return
         }
