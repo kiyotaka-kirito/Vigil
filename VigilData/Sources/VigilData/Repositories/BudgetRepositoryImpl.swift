@@ -39,4 +39,14 @@ public final class BudgetRepositoryImpl {
         
         try context.save()
     }
+    
+    public func delete(id: UUID) throws {
+        let descriptor = FetchDescriptor<BudgetDTO>()
+        let all = try context.fetch(descriptor)
+        
+        if let match = all.first(where: { $0.id == id }) {
+            context.delete(match)
+            try context.save()
+        }
+    }
 }

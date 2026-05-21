@@ -27,8 +27,16 @@ public struct BudgetListView: View {
                         description: Text("Tap + to set a monthly limit.")
                     )
                 } else {
-                    List(viewModel.budgets) { budget in
-                        BudgetRow(budget: budget)
+                    List {
+                        ForEach(viewModel.budgets) { tx in
+                            BudgetRow(budget: tx)
+                        }
+                        .onDelete { indexSet in
+                            for index in indexSet {
+                                let id = viewModel.budgets[index].id
+                                viewModel.delete(id: id)
+                            }
+                        }
                     }
                 }
             }
@@ -73,6 +81,7 @@ struct AddBudgetSheet: View {
                                 category: viewModel.selectedCatgory,
                                 limit: limit
                             )
+                            viewModel.clear()
                             dismiss()
                         }
                     }

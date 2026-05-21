@@ -32,18 +32,19 @@ public final class BudgetListViewModel {
     
     public func load() {
         do {
-            var budgets = try budgetRepository.fetchAll()
+            let budgets = try budgetRepository.fetchAll()
             let transactions = try transactionRepository.fetchAll()
             
-            for index in budgets.indices {
-                let category = transactions[index].catgory
+            self.budgets = budgets.map { budget in
+                var updatedBudget = budget
+                
                 let spent = transactions
-                    .filter { $0.catgory == category }
+                    .filter { $0.catgory == updatedBudget.category }
                     .reduce(0) { $0 + $1.amount }
-                budgets[index].amountSpent = spent
+                
+                updatedBudget.amountSpent = spent
+                return updatedBudget
             }
-            
-            self.budgets = budgets
         } catch {
             errorMessage = "Failed to load budgets."
         }
@@ -58,5 +59,20 @@ public final class BudgetListViewModel {
         } catch {
             errorMessage = "Failed to save budget."
         }
+    }
+    
+    public func delete(id: UUID) {
+        do {
+            try budgetRepository.delete(id: id)
+            budgets.removeAll(where: { $0.id == id })
+            load()
+        } catch {
+            errorMessage = "Failed to delete."
+        }
+    }
+    
+    public func clear() {
+        selectedCatgory = .food
+        limitText = ""
     }
 }
