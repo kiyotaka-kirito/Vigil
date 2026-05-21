@@ -10,7 +10,7 @@ import VigilCore
 
 public struct TransactionListView: View {
     
-    @State var viewModel: TransactionListViewModel
+    var viewModel: TransactionListViewModel
     @State var showingAddTransaction: Bool = false
     
     public init(viewModel: TransactionListViewModel) {
@@ -48,9 +48,9 @@ public struct TransactionListView: View {
                 }
             }
             .sheet(isPresented: $showingAddTransaction) {
-                AddTransactionSheet(viewModel: $viewModel)
+                AddTransactionSheet(viewModel: viewModel)
             }
-            .onAppear { viewModel.loadTransactions() }
+            .onAppear { viewModel.load() }
         }
     }
 }
@@ -58,7 +58,7 @@ public struct TransactionListView: View {
 // MARK: - Sheet
 struct AddTransactionSheet: View {
     
-    @Binding var viewModel: TransactionListViewModel
+    @Bindable var viewModel: TransactionListViewModel
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -116,6 +116,7 @@ struct AddTransactionSheet: View {
             .onChange(of: viewModel.didSaveSuccessfully) {
                 if viewModel.didSaveSuccessfully {
                     dismiss()
+                    viewModel.clear()
                 }
             }
         }

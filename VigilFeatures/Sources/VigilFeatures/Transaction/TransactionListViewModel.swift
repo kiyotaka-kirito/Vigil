@@ -28,7 +28,7 @@ public final class TransactionListViewModel {
         self.repository = repoistory
     }
     
-    public func loadTransactions() {
+    public func load() {
         do {
             transactions = try repository.fetchAll()
         } catch {
@@ -40,6 +40,7 @@ public final class TransactionListViewModel {
         do {
             try repository.delete(id: id)
             transactions.removeAll(where: { $0.id == id })
+            load()
         } catch {
             errorMessage = "Failed to delete."
         }
@@ -61,8 +62,18 @@ public final class TransactionListViewModel {
         do {
             try repository.add(transaction)
             didSaveSuccessfully = true
+            load()
         } catch {
             errorMessage = "Failed to save transaction."
         }
+    }
+    
+    public func clear() {
+        amountText = ""
+        selectedCategory = .food
+        date = Date()
+        note = ""
+        errorMessage = nil
+        didSaveSuccessfully = false
     }
 }
