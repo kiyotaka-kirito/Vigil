@@ -63,7 +63,7 @@ public struct DashboardView: View {
                 }
                 .padding(.top)
             }
-            .navigationTitle("Budget Tracker")
+            .navigationTitle("Vigil")
             .onAppear { viewModel.loadTransactions() }
         }
         

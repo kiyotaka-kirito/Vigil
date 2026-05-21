@@ -10,7 +10,7 @@ import VigilCore
 
 public struct BudgetListView: View {
     
-    @State var viewModel: BudgetListViewModel
+    var viewModel: BudgetListViewModel
     @State var showingAddBudget: Bool = false
     
     public init(viewModel: BudgetListViewModel) {
@@ -47,7 +47,7 @@ public struct BudgetListView: View {
                 }
             }
             .sheet(isPresented: $showingAddBudget) {
-                AddBudgetSheet(viewModel: $viewModel)
+                AddBudgetSheet(viewModel: viewModel)
             }
             .onAppear { viewModel.load() }
         }
@@ -57,7 +57,7 @@ public struct BudgetListView: View {
 // MARK: - Sheet
 struct AddBudgetSheet: View {
     
-    @Binding var viewModel: BudgetListViewModel
+    @Bindable var viewModel: BudgetListViewModel
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
