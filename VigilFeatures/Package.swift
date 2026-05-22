@@ -21,7 +21,10 @@ let package = Package(
             name: "VigilFeatures",
             dependencies: ["VigilCore", "VigilData"]
         ),
-
+        .testTarget(
+            name: "VigilFeaturesTests",
+            dependencies: ["VigilFeatures"]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )

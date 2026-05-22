@@ -32,9 +32,9 @@ public final class ChartViewModel {
     
     public var selectedChartType: ChartType         = .pie
     
-    private let repository: TransactionRepositoryImpl
+    private let repository: TransactionRepository
     
-    public init(repository: TransactionRepositoryImpl) {
+    public init(repository: TransactionRepository) {
         self.repository = repository
     }
     
@@ -47,7 +47,7 @@ public final class ChartViewModel {
             
             var totals: [VigilCore.Category: Double] = [:]
             for tx in transactions {
-                totals[tx.catgory, default: 0] += tx.amount
+                totals[tx.category, default: 0] += tx.amount
             }
             
             let grandTotal = totals.values.reduce(0, +)
