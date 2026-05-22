@@ -41,6 +41,7 @@ public struct BudgetListView: View {
                 }
             }
             .navigationTitle("Budgets")
+            .preferredColorScheme(.dark)
             .toolbar {
                 Button { showingAddBudget = true } label: {
                     Image(systemName: "plus")

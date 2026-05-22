@@ -17,7 +17,7 @@ public struct LockView: View {
     
     public var body: some View {
         ZStack {
-            Color(.systemBackground).ignoresSafeArea()
+            Color(.black).ignoresSafeArea()
             
             VStack(spacing: 32) {
                 

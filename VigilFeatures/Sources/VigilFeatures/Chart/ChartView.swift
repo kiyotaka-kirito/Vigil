@@ -56,6 +56,7 @@ public struct ChartView: View {
                 }
             }
             .navigationTitle("Spending")
+            .preferredColorScheme(.dark)
             .onAppear { viewModel.load() }
         }
     }
