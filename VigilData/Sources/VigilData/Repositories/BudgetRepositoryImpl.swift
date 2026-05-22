@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import VigilCore
 
-public final class BudgetRepositoryImpl {
+public final class BudgetRepositoryImpl: BudgetRepository {
     
     private let context: ModelContext
     

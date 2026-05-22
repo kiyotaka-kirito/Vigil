@@ -25,9 +25,9 @@ public final class DashboardViewModel {
         Array(transactions.prefix(5))
     }
     
-    private let repository: TransactionRepositoryImpl
+    private let repository: TransactionRepository
     
-    public init(repository: TransactionRepositoryImpl) {
+    public init(repository: TransactionRepository) {
         self.repository = repository
     }
     

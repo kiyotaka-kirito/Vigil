@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import VigilCore
 
-public final class TransactionRepositoryImpl {
+public final class TransactionRepositoryImpl: TransactionRepository {
     
     private let context: ModelContext
     

@@ -19,12 +19,12 @@ public final class BudgetListViewModel {
     public var selectedCatgory: VigilCore.Category  = .food
     public var limitText: String                    = ""
     
-    private let budgetRepository: BudgetRepositoryImpl
-    private let transactionRepository: TransactionRepositoryImpl
+    private let budgetRepository: BudgetRepository
+    private let transactionRepository: TransactionRepository
     
     public init(
-        budgetRepository: BudgetRepositoryImpl,
-        transactionRepository: TransactionRepositoryImpl
+        budgetRepository: BudgetRepository,
+        transactionRepository: TransactionRepository
     ) {
         self.budgetRepository = budgetRepository
         self.transactionRepository = transactionRepository

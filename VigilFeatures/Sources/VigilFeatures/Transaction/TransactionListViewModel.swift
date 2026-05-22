@@ -22,9 +22,9 @@ public final class TransactionListViewModel {
     public var note: String                         = ""
     public var didSaveSuccessfully: Bool            = false
     
-    private let repository: TransactionRepositoryImpl
+    private let repository: TransactionRepository
     
-    public init(repoistory: TransactionRepositoryImpl) {
+    public init(repoistory: TransactionRepository) {
         self.repository = repoistory
     }
     

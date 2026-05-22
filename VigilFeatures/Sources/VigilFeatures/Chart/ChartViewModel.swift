@@ -32,9 +32,9 @@ public final class ChartViewModel {
     
     public var selectedChartType: ChartType         = .pie
     
-    private let repository: TransactionRepositoryImpl
+    private let repository: TransactionRepository
     
-    public init(repository: TransactionRepositoryImpl) {
+    public init(repository: TransactionRepository) {
         self.repository = repository
     }
     
