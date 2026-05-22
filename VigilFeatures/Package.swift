@@ -24,8 +24,7 @@ let package = Package(
         .testTarget(
             name: "VigilFeaturesTests",
             dependencies: ["VigilFeatures"]
-        )
-
+        ),
     ],
     swiftLanguageModes: [.v6]
 )

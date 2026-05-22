@@ -54,7 +54,7 @@ public final class TransactionListViewModel {
         
         let transaction = Transaction(
             amount: amount,
-            catgory: selectedCategory,
+            category: selectedCategory,
             date: date,
             note: note
         )

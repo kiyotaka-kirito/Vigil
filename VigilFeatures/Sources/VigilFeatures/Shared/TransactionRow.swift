@@ -19,7 +19,7 @@ public struct TransactionRow: View {
     public var body: some View {
         HStack(spacing: 14) {
             // Category Icon
-            Text(transaction.catgory.icon)
+            Text(transaction.category.icon)
                 .font(.title2)
                 .frame(width: 48, height: 48)
                 .background(Color(.systemGray6))
@@ -28,7 +28,7 @@ public struct TransactionRow: View {
             // Note and Date
             VStack(alignment: .leading, spacing: 3) {
                 Text(transaction.note.isEmpty
-                     ? transaction.catgory.rawValue
+                     ? transaction.category.rawValue
                      : transaction.note )
                     .font(.subheadline)
                     .fontWeight(.medium)
@@ -53,5 +53,5 @@ public struct TransactionRow: View {
 }
 
 #Preview {
-    TransactionRow(transaction: Transaction(amount: 10.0, catgory: .shopping, date: Date()))
+    TransactionRow(transaction: Transaction(amount: 10.0, category: .shopping, date: Date()))
 }
