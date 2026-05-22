@@ -42,6 +42,7 @@ public struct TransactionListView: View {
                 }
             }
             .navigationTitle("Transactions")
+            .preferredColorScheme(.dark)
             .toolbar {
                 Button { showingAddTransaction = true } label: {
                     Image(systemName: "plus")

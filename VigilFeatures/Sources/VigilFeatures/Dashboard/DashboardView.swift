@@ -64,6 +64,7 @@ public struct DashboardView: View {
                 .padding(.top)
             }
             .navigationTitle("Vigil")
+            .preferredColorScheme(.dark)
             .onAppear { viewModel.loadTransactions() }
         }
         
